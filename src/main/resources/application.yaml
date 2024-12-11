@@ -1,0 +1,11 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: orders
+  data:
+    mongodb:
+      uri: mongodb://mongo:mongo@localhost:27017
+      username: mongo
+      password: mongo
+      database: mongo
