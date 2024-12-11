@@ -12,9 +12,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "orders")
 public class Order {
     @Id
-    private String id; // MongoDB использует String ID по умолчанию
-    private Long userId; // ID пользователя, который сделал заказ
+    private String id;
+    private Long userId;
     private String productName;
     private Integer quantity;
-    private Double price; // Можно добавить дополнительные поля
+    private Double price;
 }

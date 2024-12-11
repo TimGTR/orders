@@ -1,6 +1,7 @@
 package org.example.orders.controller;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.example.orders.dto.Order;
 import org.example.orders.dto.OrderRequest;
 import org.example.orders.service.OrderService;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+@Slf4j
 @RestController
 @RequestMapping("/orders")
 @RequiredArgsConstructor
@@ -26,6 +28,7 @@ public class OrderController {
 
     @GetMapping("/user/{userId}")
     public Flux<Order> getOrdersByUserId(@PathVariable Long userId) {
+        log.info("Get orders by userId: {}", userId);
         return orderService.getOrdersByUserId(userId);
     }
 }
